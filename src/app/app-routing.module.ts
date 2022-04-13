@@ -11,6 +11,19 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'escritorio',
+    loadChildren: () => import('./escritorio/escritorio.module').then( m => m.EscritorioPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
+  },
+
 ];
 
 @NgModule({
